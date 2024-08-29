@@ -1,0 +1,27 @@
+
+type UserProps = {   
+  firstName: string; // Used to signify properties
+  lastName: string;
+  email: string
+}
+
+interface Serializable { 
+	toJSON (): string;  // A method also camel cased
+}
+
+class User implements Serializable {  
+  private props: UserProps;   // Camel cased property
+	
+  // constructor and parameters are camel cased
+  constructor (firstName: string, lastName: string) { 
+    this.props = { firstName, lastName };
+  }
+  
+  public toJSON (): string {
+    return JSON.stringify(this.props);
+  }
+}
+
+// Variables are camel case
+const userOne = new User('Khalil', 'Stemmler');
+const userTwo = new User('Nick', 'Cave');

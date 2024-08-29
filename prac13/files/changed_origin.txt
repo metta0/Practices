@@ -1,0 +1,27 @@
+
+type user_props = {   
+  first_name: string; // used to signify properties
+  last_name: string;
+  email: string
+}
+
+interface serializable { 
+	to_json (): string;  // a method also camel cased
+}
+
+class user implements serializable {  
+  private props: user_props;   // camel cased property
+	
+  // constructor and parameters are camel cased
+  constructor (first_name: string, last_name: string) { 
+    this.props = { first_name, last_name };
+  }
+  
+  public to_json (): string {
+    return json.stringify(this.props);
+  }
+}
+
+// variables are camel case
+const user_one = new user('khalil', 'stemmler');
+const user_two = new user('nick', 'cave');
