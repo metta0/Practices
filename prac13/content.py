@@ -25,3 +25,4 @@ for file in os.listdir(dir):
         for line in lines:
             new_line = re.sub(r'([a-z0-9])([A-Z])', r'\1_\2', line).lower()
             w.write(new_line)
+
