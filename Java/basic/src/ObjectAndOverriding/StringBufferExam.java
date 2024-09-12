@@ -16,7 +16,7 @@ public class StringBufferExam {
         if (sb2 == sb3)
             System.out.println("sb2 == sb3");
         
-        System.out.println(type("a"+"b"));
+
 
     }
     
